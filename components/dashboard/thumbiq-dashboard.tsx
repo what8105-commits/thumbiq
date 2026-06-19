@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -608,34 +609,34 @@ function DailyTrendPanel({
               (trend, index) =>
                 trend ? (
                   <article
-                    key={trend.link}
+                   key={index}
                     className="grid gap-3 rounded-md border bg-white p-4 transition-colors hover:border-primary/30"
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="min-w-0">
                         <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground">
-                          {trend.source}
+                         {"Source"}
                         </p>
                         <h3 className="mt-1 line-clamp-2 font-semibold">
-                          {trend.suggestedTopic}
+                          {"Trending Topic"}
                         </h3>
                       </div>
                       <Badge>{index + 1}</Badge>
                     </div>
                     <p className="text-sm leading-6 text-muted-foreground">
-                      {trend.angle}
+                      {index}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <Button
                         type="button"
                         variant="outline"
                         size="sm"
-                        onClick={() => onUseTopic(trend.suggestedTopic)}
+                        onClick={() => onUseTopic("Trending Topic")}
                       >
                         Use topic
                       </Button>
                       <Button asChild variant="ghost" size="sm">
-                        <a href={trend.link} target="_blank" rel="noreferrer">
+                        <a href="#" target="_blank" rel="noreferrer">
                           Source link
                         </a>
                       </Button>
